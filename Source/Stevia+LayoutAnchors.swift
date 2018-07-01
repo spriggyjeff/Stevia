@@ -110,6 +110,94 @@ public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayo
     return constraint
 }
 
+@available(iOS 9.0, *)
+@discardableResult
+public func >= (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayoutConstraint {
+
+    var constraint = NSLayoutConstraint()
+
+    if left.attribute == .top {
+        constraint = left.view.topAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .bottom {
+        constraint = left.view.bottomAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    constraint.isActive = true
+    return constraint
+}
+
+@available(iOS 9.0, *)
+@discardableResult
+public func >= (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayoutConstraint {
+
+    var constraint = NSLayoutConstraint()
+
+    if left.attribute == .left {
+        constraint = left.view.leftAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .right {
+        constraint = left.view.rightAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .leading {
+        constraint = left.view.leadingAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .trailing {
+        constraint = left.view.trailingAnchor.constraint(greaterThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    constraint.isActive = true
+    return constraint
+}
+
+@available(iOS 9.0, *)
+@discardableResult
+public func <= (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayoutConstraint {
+
+    var constraint = NSLayoutConstraint()
+
+    if left.attribute == .top {
+        constraint = left.view.topAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .bottom {
+        constraint = left.view.bottomAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    constraint.isActive = true
+    return constraint
+}
+
+@available(iOS 9.0, *)
+@discardableResult
+public func <= (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayoutConstraint {
+
+    var constraint = NSLayoutConstraint()
+
+    if left.attribute == .left {
+        constraint = left.view.leftAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .right {
+        constraint = left.view.rightAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .leading {
+        constraint = left.view.leadingAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    if left.attribute == .trailing {
+        constraint = left.view.trailingAnchor.constraint(lessThanOrEqualTo: right.anchor, constant: right.constant)
+    }
+
+    constraint.isActive = true
+    return constraint
+}
+
 // SteviaLayoutYAxisAnchor
 
 @available(iOS 9.0, *)
